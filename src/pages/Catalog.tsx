@@ -6,8 +6,9 @@ import { ProductDetailModal } from "@/components/ProductDetailModal";
 import { CategoryFilter } from "@/components/CategoryFilter";
 import { SearchAndSort } from "@/components/SearchAndSort";
 import { StoreHeader } from "@/components/StoreHeader";
+import { SEOHead } from "@/components/seo/SEOHead";
 
-const Index = () => {
+const Catalog = () => {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -55,8 +56,15 @@ const Index = () => {
   }, [selectedCategory, searchQuery, sortBy]);
 
   return (
-    <div className="min-h-screen bg-background">
-      <StoreHeader />
+    <>
+      <SEOHead
+        title="Catálogo - GeekHub MX"
+        description="Explora nuestro catálogo completo de figuras, mangas y coleccionables de anime. Encuentra tus productos favoritos en GeekHub MX."
+        ogImage="/og-catalog.jpg"
+      />
+      
+      <div className="min-h-screen bg-background">
+        <StoreHeader />
 
       <main className="container mx-auto px-4 py-8">
         <div className="mb-8">
@@ -99,13 +107,14 @@ const Index = () => {
         )}
       </main>
 
-      <ProductDetailModal
-        product={selectedProduct}
-        open={!!selectedProduct}
-        onOpenChange={(open) => !open && setSelectedProduct(null)}
-      />
-    </div>
+        <ProductDetailModal
+          product={selectedProduct}
+          open={!!selectedProduct}
+          onOpenChange={(open) => !open && setSelectedProduct(null)}
+        />
+      </div>
+    </>
   );
 };
 
-export default Index;
+export default Catalog;
