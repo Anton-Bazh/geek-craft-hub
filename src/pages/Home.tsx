@@ -22,8 +22,8 @@ const Home = () => {
   return (
     <>
       <SEOHead
-        title="GeekHub MX - Tu tienda de anime, manga y coleccionables"
-        description="Descubre las mejores figuras, mangas y productos de anime en GeekHub MX. Coleccionables exclusivos para verdaderos fans del anime y la cultura otaku."
+        title="GeekLands MX - Tu tienda de anime, manga y coleccionables"
+        description="Descubre las mejores figuras, mangas y productos de anime en GeekLands MX. Coleccionables exclusivos para verdaderos fans del anime y la cultura otaku."
         ogImage="/og-home.jpg"
       />
 
@@ -33,7 +33,7 @@ const Home = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-                Bienvenido a GeekHub MX
+                Bienvenido a GeekLands MX
               </h1>
               <p className="text-lg md:text-xl mb-8 text-primary-foreground/90 animate-fade-in">
                 Las mejores figuras, mangas y coleccionables de anime para verdaderos fans

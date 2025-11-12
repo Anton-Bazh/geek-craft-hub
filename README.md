@@ -1,8 +1,8 @@
-# Otaku Haven - Geek & Anime Collectibles Store
+# GeekLands - Geek & Anime Collectibles Store
 
 A modern, non-transactional catalog website for anime figures, manga, collectibles, and exclusive merchandise. Built with React, TypeScript, and Tailwind CSS, featuring AI-powered product insights.
 
-![Otaku Haven](https://img.shields.io/badge/Built%20with-Lovable-FF6B9D)
+![GeekLands](https://img.shields.io/badge/Built%20with-Lovable-FF6B9D)
 ![React](https://img.shields.io/badge/React-18.3-61DAFB?logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)
 ![Tailwind](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css)
@@ -160,7 +160,7 @@ Uses AI-generated personalized message from product analysis.
 
 ```typescript
 const handleWhatsAppClick = () => {
-  const cleanPhone = '+525551234567'.replace(/[^0-9]/g, '');
+  const cleanPhone = '+527351031090'.replace(/[^0-9]/g, '');
   const message = encodeURIComponent(messageText);
   window.open(`https://wa.me/${cleanPhone}?text=${message}`, '_blank');
 };

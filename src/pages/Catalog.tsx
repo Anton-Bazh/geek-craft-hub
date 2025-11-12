@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import { ArrowRight, Package, Star, TrendingUp } from "lucide-react";
 import { Product } from "@/types/product";
 import { sampleProducts, categories } from "@/data/sampleProducts";
 import { ProductCard } from "@/components/ProductCard";
@@ -58,8 +59,8 @@ const Catalog = () => {
   return (
     <>
       <SEOHead
-        title="Catálogo - GeekHub MX"
-        description="Explora nuestro catálogo completo de figuras, mangas y coleccionables de anime. Encuentra tus productos favoritos en GeekHub MX."
+        title="Catálogo - GeekLands MX"
+        description="Explora nuestro catálogo completo de figuras, mangas y coleccionables de anime. Encuentra tus productos favoritos en GeekLands MX."
         ogImage="/og-catalog.jpg"
       />
       

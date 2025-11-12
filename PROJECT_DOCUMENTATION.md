@@ -1,8 +1,8 @@
-# Otaku Haven - Geek/Otaku Store Catalog
+# GeekLands - Geek/Otaku Store Catalog
 
 ## Executive Summary
 
-Otaku Haven is a modern, non-transactional geek and anime collectibles catalog website built with React, TypeScript, and Tailwind CSS. The platform showcases anime figures, manga, collectibles, and exclusive merchandise with a beautiful, responsive interface. Key features include AI-powered product insights using Lovable AI (powered by Google Gemini), WhatsApp integration for customer inquiries, advanced filtering and search, and a vibrant design system tailored for the otaku community. The application is built on Lovable Cloud (Supabase backend) for scalable serverless functions and follows modern web best practices for accessibility, SEO, and security.
+GeekLands is a modern, non-transactional geek and anime collectibles catalog website built with React, TypeScript, and Tailwind CSS. The platform showcases anime figures, manga, collectibles, and exclusive merchandise with a beautiful, responsive interface. Key features include AI-powered product insights using Lovable AI (powered by Google Gemini), WhatsApp integration for customer inquiries, advanced filtering and search, and a vibrant design system tailored for the otaku community. The application is built on Lovable Cloud (Supabase backend) for scalable serverless functions and follows modern web best practices for accessibility, SEO, and security.
 
 ---
 
@@ -214,7 +214,7 @@ interface StoreInfo {
   tagline: string;
   description: string;
   contact: {
-    whatsapp: string;            // Format: "+52-555-123-4567"
+    whatsapp: string;            // Format: "+527351031090"
     email: string;
     social?: {
       instagram?: string;
@@ -662,7 +662,7 @@ https://wa.me/<PHONE_NUMBER>?text=<ENCODED_MESSAGE>
 
 **Example:**
 ```
-https://wa.me/525551234567?text=Hi!%20I'm%20interested%20in%20Deku%20Action%20Figure
+https://wa.me/527351031090?text=Hi!%20I'm%20interested%20in%20Deku%20Action%20Figure
 ```
 
 ### Message Templates
@@ -682,7 +682,7 @@ Hi! I'd like to know more about the {PRODUCT_TITLE}. {AI_CUSTOM_MESSAGE}
 
 ### Multi-Region Phone Numbers
 
-**Mexico Format:** `+52-555-123-4567`
+**Mexico Format:** `+527351031090`
 
 **Implementation:**
 ```typescript
@@ -770,7 +770,7 @@ sku-001,"Product 1","Subtitle","Short desc","figures,manga","limited,rare",1499.
 **Implementation (per product):**
 ```tsx
 <Helmet>
-  <title>{product.title} | Otaku Haven</title>
+  <title>{product.title} | GeekLands</title>
   <meta name="description" content={product.description_short} />
   <meta property="og:title" content={product.title} />
   <meta property="og:description" content={product.description_short} />
@@ -1328,7 +1328,7 @@ Important:
 
 ## Conclusion
 
-This Otaku Haven project is a production-ready, fully functional geek/otaku store catalog with advanced features including AI-powered product insights, WhatsApp integration, and a beautiful responsive design. The application follows modern web development best practices, is fully accessible, SEO-optimized, and secure. All code is provided, documented, and ready for deployment on Lovable Cloud or any standard web host.
+This GeekLands project is a production-ready, fully functional geek/otaku store catalog with advanced features including AI-powered product insights, WhatsApp integration, and a beautiful responsive design. The application follows modern web development best practices, is fully accessible, SEO-optimized, and secure. All code is provided, documented, and ready for deployment on Lovable Cloud or any standard web host.
 
 The comprehensive documentation above provides everything needed to understand, maintain, and extend the application. For any questions or support, refer to the Lovable documentation at https://docs.lovable.dev/.
 

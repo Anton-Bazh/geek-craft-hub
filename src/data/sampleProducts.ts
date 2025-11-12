@@ -175,11 +175,11 @@ export const categories: Category[] = [
 ];
 
 export const storeInfo: StoreInfo = {
-  name: "Otaku Haven",
+  name: "GeekLands",
   tagline: "Your Premium Geek & Anime Collectibles Store",
-  description: "Welcome to Otaku Haven! We specialize in authentic anime figures, manga, collectibles, and exclusive merchandise from your favorite series. Every item is carefully curated and verified for authenticity.",
+  description: "Welcome to GeekLands! We specialize in authentic anime figures, manga, collectibles, and exclusive merchandise from your favorite series. Every item is carefully curated and verified for authenticity.",
   contact: {
-    whatsapp: "+52-555-123-4567",
+    whatsapp: "+527351031090",
     email: "hello@otakuhaven.com",
     social: {
       instagram: "@otakuhaven",

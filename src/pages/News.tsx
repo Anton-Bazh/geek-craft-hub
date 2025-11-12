@@ -9,8 +9,8 @@ const News = () => {
   return (
     <>
       <SEOHead
-        title="Noticias - GeekHub MX"
-        description="Últimas noticias, lanzamientos y novedades del mundo del anime, manga y coleccionables. Mantente informado con GeekHub MX."
+        title="Noticias - GeekLands MX"
+        description="Últimas noticias, lanzamientos y novedades del mundo del anime, manga y coleccionables. Mantente informado con GeekLands MX."
         ogImage="/og-news.jpg"
       />
 

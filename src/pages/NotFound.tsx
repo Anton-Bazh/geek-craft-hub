@@ -14,7 +14,7 @@ const NotFound = () => {
   return (
     <>
       <SEOHead
-        title="Página no encontrada - GeekHub MX"
+        title="Página no encontrada - GeekLands MX"
         description="La página que buscas no existe. Regresa al inicio o explora nuestro catálogo."
       />
       

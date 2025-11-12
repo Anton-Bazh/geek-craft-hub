@@ -47,7 +47,7 @@ export const TalkAboutProduct = ({ product, onClose }: TalkAboutProductProps) =>
     if (!response) return;
     
     const message = encodeURIComponent(response.whatsapp_text);
-    const whatsappUrl = `https://wa.me/${'+525551234567'.replace(/[^0-9]/g, '')}?text=${message}`;
+    const whatsappUrl = `https://wa.me/${'+527351031090'.replace(/[^0-9]/g, '')}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 

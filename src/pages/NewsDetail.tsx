@@ -19,7 +19,7 @@ const NewsDetail = () => {
   return (
     <>
       <SEOHead
-        title={`${article.title} - GeekHub MX`}
+        title={`${article.title} - GeekLands MX`}
         description={article.excerpt}
         ogImage={article.image || "/og-news.jpg"}
         ogType="article"

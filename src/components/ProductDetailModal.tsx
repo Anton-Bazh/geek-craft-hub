@@ -29,7 +29,7 @@ export const ProductDetailModal = ({ product, open, onOpenChange }: ProductDetai
     const message = encodeURIComponent(
       `Hi! I'm interested in:\n${product.title}\nSKU: ${product.id}\nPrice: ${formatPrice(product.price_suggested, product.currency)}`
     );
-    const whatsappUrl = `https://wa.me/${'+525551234567'.replace(/[^0-9]/g, '')}?text=${message}`;
+    const whatsappUrl = `https://wa.me/${'+527351031090'.replace(/[^0-9]/g, '')}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 

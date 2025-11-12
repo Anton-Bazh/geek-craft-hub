@@ -7,8 +7,8 @@ const About = () => {
   return (
     <>
       <SEOHead
-        title="Nosotros - GeekHub MX"
-        description="Conoce la historia de GeekHub MX, tu tienda especializada en anime, manga y coleccionables. Pasión por la cultura otaku desde el primer día."
+        title="Nosotros - GeekLands MX"
+        description="Conoce la historia de GeekLands MX, tu tienda especializada en anime, manga y coleccionables. Pasión por la cultura otaku desde el primer día."
         ogImage="/og-about.jpg"
       />
 

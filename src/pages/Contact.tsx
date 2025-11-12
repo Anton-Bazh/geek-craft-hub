@@ -47,8 +47,8 @@ const Contact = () => {
   return (
     <>
       <SEOHead
-        title="Contacto - GeekHub MX"
-        description="Ponte en contacto con GeekHub MX. Envíanos tus preguntas sobre productos, pedidos o cualquier consulta. Estamos aquí para ayudarte."
+        title="Contacto - GeekLands MX"
+        description="Ponte en contacto con GeekLands MX. Envíanos tus preguntas sobre productos, pedidos o cualquier consulta. Estamos aquí para ayudarte."
         ogImage="/og-contact.jpg"
       />
 
