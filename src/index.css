@@ -2,20 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+   All colors MUST be HSL.
+   Ajuste: se han suavizado los blancos del modo claro (background / card / popover / muted)
+   para reducir el brillo extremo en pantallas de alta calidad. Los tonos oscuros se mantienen
+   como los definiste (versión "ChatGPT-like").
 */
 
 @layer base {
   :root {
-    /* Geek/Otaku Store Design System - Light Mode */
-    --background: 0 0% 100%;
+    /* Geek/Otaku Store Design System - Light Mode (blancos suavizados) */
+    /* Background ligeramente off-white para reducir brillos extremos */
+    --background: 220 8% 97%;         /* antes: 0 0% 100% (blanco puro) */
+
     --foreground: 240 10% 15%;
 
-    --card: 0 0% 98%;
+    /* Superficies: cards y popovers ahora con un blanco menos intenso */
+    --card: 220 8% 98%;               /* antes: 0 0% 98% */
     --card-foreground: 240 10% 15%;
 
-    --popover: 0 0% 100%;
+    --popover: 220 8% 97%;            /* antes: 0 0% 100% */
     --popover-foreground: 240 10% 15%;
 
     /* Electric Blue Primary */
@@ -31,15 +37,16 @@ All colors MUST be HSL.
     --accent: 25 95% 55%;
     --accent-foreground: 0 0% 100%;
 
-    /* Soft muted colors */
-    --muted: 240 10% 96%;
+    /* Soft muted colors - menos brillante que antes */
+    --muted: 220 8% 95%;              /* antes: 240 10% 96% */
     --muted-foreground: 240 5% 45%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 10% 90%;
-    --input: 240 10% 90%;
+    /* Bordes / inputs ligeramente más contrastados respecto al fondo */
+    --border: 220 8% 88%;            /* antes: 240 10% 90% */
+    --input: 220 8% 92%;             /* antes: 240 10% 90% */
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
@@ -59,40 +66,46 @@ All colors MUST be HSL.
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Dark mode: tonos ajustados a gris oscuro más agradable (estilo ChatGPT) */
   .dark {
-    /* Geek/Otaku Store Design System - Dark Mode */
-    --background: 240 10% 8%;
-    --foreground: 0 0% 98%;
+    /* Background / foreground */
+    --background: 220 8% 16%;      /* gris oscuro suave */
+    --foreground: 0 0% 96%;        /* casi blanco para texto */
 
-    --card: 240 10% 12%;
-    --card-foreground: 0 0% 98%;
+    /* Cards / surfaces */
+    --card: 220 8% 20%;            /* ligeramente más claro que el fondo */
+    --card-foreground: 0 0% 96%;
 
-    --popover: 240 10% 10%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 220 8% 18%;
+    --popover-foreground: 0 0% 96%;
 
+    /* Primary / accents (mantengo los azules/purpuras pero adaptados al fondo) */
     --primary: 217 91% 65%;
-    --primary-foreground: 240 10% 8%;
+    --primary-foreground: 220 8% 16%; /* texto oscuro sobre primary si se usa en dark */
     --primary-glow: 217 91% 80%;
 
     --secondary: 270 70% 65%;
-    --secondary-foreground: 240 10% 8%;
+    --secondary-foreground: 220 8% 16%;
 
     --accent: 25 95% 60%;
-    --accent-foreground: 240 10% 8%;
+    --accent-foreground: 220 8% 16%;
 
-    --muted: 240 10% 15%;
-    --muted-foreground: 240 5% 65%;
+    /* Muted / text-muted */
+    --muted: 220 8% 24%;           /* gris medio para surface-muted */
+    --muted-foreground: 220 6% 72%;/* texto gris claro sobre muted */
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 96%;
 
-    --border: 240 10% 20%;
-    --input: 240 10% 20%;
+    /* Inputs / borders */
+    --border: 220 8% 28%;
+    --input: 220 8% 22%;
     --ring: 217 91% 65%;
 
-    --shadow-card: 0 2px 8px hsl(0 0% 0% / 0.5);
-    --shadow-card-hover: 0 8px 24px hsl(217 91% 65% / 0.3);
-    --shadow-glow: 0 0 40px hsl(217 91% 80% / 0.4);
+    /* Shadows: más suaves y con menos contraste duro */
+    --shadow-card: 0 2px 8px hsl(220 8% 6% / 0.44);
+    --shadow-card-hover: 0 8px 24px hsl(217 91% 65% / 0.18);
+    --shadow-glow: 0 0 40px hsl(217 91% 80% / 0.25);
   }
 }
 
@@ -103,5 +116,37 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Optional: ajustes para elementos comunes en modo dark para mayor legibilidad */
+  .dark a {
+    color: hsl(var(--primary));
+  }
+
+  .dark button,
+  .dark input,
+  .dark textarea,
+  .dark select {
+    background-color: hsl(var(--input));
+    color: hsl(var(--card-foreground));
+    border-color: hsl(var(--border));
+  }
+
+  /* Slightly elevated cards in dark */
+  .card {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transition: var(--transition-smooth);
+  }
+
+  .muted {
+    background-color: hsl(var(--muted));
+    color: hsl(var(--muted-foreground));
   }
 }

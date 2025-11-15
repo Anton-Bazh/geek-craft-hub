@@ -1,42 +1,103 @@
+/* Mejoras al snippet del logo / layout para integrar tema y accesibilidad */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* Logo: tamaño responsivo, transición suave y enfoque accesible */
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  /* tamaño responsivo: mínimo 3rem, máximo 6rem */
+  height: clamp(3rem, 6vw, 6rem);
+  padding: 1.5rem;
+  display: inline-block;
+  vertical-align: middle;
+
+  /* optimizaciones de animación: preferir transform sobre filter */
+  will-change: transform, filter;
+  transition: transform 300ms var(--transition-smooth, ease), filter 300ms var(--transition-smooth, ease);
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
+
+/* Hover: glow usando variables HSL definidas en el design system */
+/* Usamos hsl(var(--primary-glow) / 0.45) para transparencia moderna */
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  transform: translateY(-2px); /* ligero levantamiento */
+  filter: drop-shadow(0 0 1.6rem hsl(var(--primary-glow) / 0.38));
 }
+
+/* Si el logo tiene clase .react (identificador para React logo), usar color primario */
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 1.6rem hsl(var(--primary) / 0.35));
 }
 
+/* Accesibilidad: foco visible para navegación por teclado */
+.logo:focus-visible {
+  outline: 3px solid hsl(var(--primary) / 0.9);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 4px hsl(var(--primary) / 0.12);
+}
+
+/* Rotación suave del logo SOLO si el usuario no pidió reducir movimiento */
 @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
+/* Aplicar la animación solo si el usuario no la ha pedido reducir */
 @media (prefers-reduced-motion: no-preference) {
+  /* animar el segundo enlace (igual que antes) pero con transform */
   a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+    animation: logo-spin 20s linear infinite;
+    /* mejorar suavidad y rendimiento: usa transform, no filter */
+    transform-origin: center center;
   }
 }
 
-.card {
-  padding: 2em;
+/* Si user pide reducir movimiento, pausamos la animación y quitamos transformaciones */
+@media (prefers-reduced-motion: reduce) {
+  a:nth-of-type(2) .logo {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
+/* Tarjetas / contenedores: coherencia con variables de tema */
+.card {
+  padding: 2rem;
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 200ms ease, transform 200ms ease;
+}
+
+/* Hover en tarjeta: sutil elevación */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* Texto auxiliar */
 .read-the-docs {
-  color: #888;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.95rem;
+}
+
+/* Ajustes responsivos menores */
+@media (max-width: 640px) {
+  #root {
+    padding: 1rem;
+  }
+  .logo {
+    padding: 1rem;
+    height: clamp(2.5rem, 12vw, 4.5rem);
+  }
+  .card {
+    padding: 1rem;
+  }
 }
